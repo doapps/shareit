@@ -1,0 +1,544 @@
+<!DOCTYPE html> 
+<html>
+<head>
+<meta charset="utf-8">
+<title>Compartelo</title>
+<!--Css js Requeridos -->
+	<link rel="stylesheet"  href="jquery-mobile/jquery.mobile-1.4.2.min.css">
+    <link rel="stylesheet" href="jquery-mobile/jqm-demos.css">
+	<script src="jquery-mobile/jquery.js"></script>
+    <script src="jquery-mobile/index.js"></script>
+	<script src="jquery-mobile/jquery.mobile-1.4.2.min.js"></script>
+    <!-- cordova.js -->
+    <script src="cordova.js"></script>
+    <!-- WS login -->
+    <script src="js/login.js"></script>
+
+</head> 
+<body> 
+    <!--Login -->
+    <div data-role="page" id="login" align="center">
+        <div class="jqm-block-content">
+            <br><br>
+            <img src="img/logo.png" class="imagen3"><br><br>
+            <form action="#inicio" method="post" data-ajax="false" id="frm">
+                <input type="email" name="email" id="email" data-icon="user" placeholder="E-mail" />
+                <input type="password" name="password" id="password"  placeholder="Contraseña"/>
+                <input type="submit" value="INGRESAR"  data-icon="check" data-theme="b"/>
+            </form>
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+           <div data-role="navbar">
+            <ul>
+            	<li><a href="#registrar" data-role="button" data-icon="user">Registrar</a></li>
+           		<li><a href="#info" data-role="button" data-icon="info">Info</a></li>
+            </ul>
+           </div>
+        </div>
+    </div>
+    <!-- /Login -->
+     <!--Registrar -->
+    <div data-role="page" id="registrar"  class="jqm-demos jqm-home">
+        <div data-role="header"  class="jqm-header" >
+        <h1>Registrar</h1>        
+        </div>
+        <div data-role="content">
+        	<div class="jqm-block-content">
+                <center><img src="img/logo.png" class="imagen3"></center>
+                <br><h3>Ingrese los datos...</h3>
+                <form action="#" method="post" data-ajax="false" id="form_register"> 
+                    <label for="text-basic">Usuario:</label>
+                    <input type="text" name="usuario" id="usuario" size="20" required>
+                    <label for="text-basic">Contraseña:</label>
+                    <input type="password" name="pass" id="pass" size="20" required >
+                    <label for="text-basic">Confirmar Contraseña:</label>
+                    <input type="password" name="pass2" id="pass2" size="20" required >
+                    <label for="text-basic">Correo:</label>
+                    <input type="email" name="correo" id="correo" size="45" required>
+                    <input type="submit" value="REGISTRAR"  data-icon="check" data-theme="b"/>
+                </form>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+           <div data-role="navbar">
+            <ul>
+            	<li><a href="" data-role="button" data-icon="arrow-l" data-rel="back">Atras</a></li>
+           		<li><a href="#info" data-role="button" data-icon="info">Info</a></li>
+            </ul>
+           </div>
+        </div>
+    </div>
+    <!-- /Registrar -->
+      <!-- Mi Perfil-->
+ 	<div data-role="page" id="miperfil"  class="jqm-demos jqm-home">
+        <div data-role="header"  class="jqm-header" >
+        <h1>Mi Perfil</h1>        
+        </div>
+        <div data-role="content">
+        	<div class="jqm-block-content" align="center">
+        				<img src="img/perfil.jpg" class="imagen3">
+                        <a href="#info" data-role="button"  data-theme="b" data-icon="camera">Cambiar Imagen</a>
+                        <br><h3>@elberth1992</h3>
+                        <h4>Soy artista, escultor</h4>
+                        <div class="jqm-block-content" align="left">
+                        <h4>Nombre:</h4>
+                        <input disabled="disabled" type="text" name="textinput-disabled" id="textinput-disabled" value="Elberth Jair">
+                        <h4>Apellido:</h4>
+                        <input disabled="disabled" type="text" name="textinput-disabled" id="textinput-disabled" value="Agreda">
+                        <h4>Sexo:</h4>
+                        <select disabled="disabled" name="slider-flip-m" id="slider-flip-m" data-role="slider" data-mini="true">
+                            <option value="off" selected="">H</option>
+                            <option value="on" >M</option>
+                        </select>
+                        <h4>Telefono:</h4>
+                        <input disabled="disabled" type="text" name="textinput-disabled" id="textinput-disabled" value="3206394337">
+                        <h4>Correo:</h4>
+                        <input disabled="disabled" type="text" name="textinput-disabled" id="textinput-disabled" value="elberth1995@hotmail.com">
+                        <h4>Ciudad:</h4>
+                        <input disabled="disabled" type="text" name="textinput-disabled" id="textinput-disabled"value="Cali Valle del cauca">
+                        </div>
+                        <a href="#" data-role="button"  data-theme="b" data-icon="edit">Cambiar Datos</a>
+             			
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+           <div data-role="navbar">
+            <ul>
+            	<li><a href="#" data-role="button" data-icon="arrow-l" data-rel="back">Atras</a></li>
+           		<li><a href="#info" data-role="button" data-icon="info">Info</a></li>
+            </ul>
+           </div>
+        </div>
+    </div>
+     <!-- / Mi Perfil -->
+     <!-- Listado Contactos -->
+    <div data-role="page" id="contactos"  class="jqm-demos jqm-home">
+        <div data-role="header"  class="jqm-header" >
+        <h1>Contactos</h1>        
+        </div>
+        <div data-role="content">
+            <div class="jqm-block-content" align="center">
+                        <ul data-role="listview" data-autodividers="true" data-filter="true" data-inset="true" >
+                            <li data-icon="phone"><a href="#perfilamigo">
+                             <img src="img/logo.png" class="imagen3">
+                            <h2>Elberth Agreda</h2>
+                            <p>3206394337</p></a>
+                            <a href="#llamarcontacto" data-rel="popup" data-position-to="window" ></a>
+                            </li>
+                        </ul>
+                                <!--Llamar contacto -->
+                                <div data-role="popup" id="llamarcontacto" data-theme="a" class="ui-corner-all">
+                                    <form>
+                                        <div style="padding:10px 20px;">
+                                            <h3>Opciones:</h3>
+                                            <a href="tel:3206394337" data-icon="phone" data-role="button" data-theme="b">Llamar</a>
+                                            <a href="mailto:elberth1995@hotmail.com" data-icon="mail" data-role="button">Contactar</a>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!--/Llamar contacto -->
+
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+           <div data-role="navbar">
+            <ul>
+                <li><a href="#" data-role="button" data-icon="arrow-l" data-rel="back">Atras</a></li>
+                <li><a href="#info" data-role="button" data-icon="info">Info</a></li>
+            </ul>
+           </div>
+        </div>
+    </div>
+     <!-- /Listado Contactos -->
+     <!-- Mis imagenes -->
+    <div data-role="page" id="misimg"  class="jqm-demos jqm-home">
+        <div data-role="header"  class="jqm-header" >
+        <h1>Mis imagenes</h1>        
+        </div>
+        <div data-role="content">
+            <div class="jqm-block-content" align="center">
+                   <p>listado de imageens</p>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+           <div data-role="navbar">
+            <ul>
+                <li><a href="#" data-role="button" data-icon="arrow-l" data-rel="back">Atras</a></li>
+                <li><a href="#info" data-role="button" data-icon="info">Info</a></li>
+            </ul>
+           </div>
+        </div>
+    </div>
+     <!-- /Mis Imagenes -->
+          <!-- Mis Videos -->
+    <div data-role="page" id="misvid"  class="jqm-demos jqm-home">
+        <div data-role="header"  class="jqm-header" >
+        <h1>Mis Videos</h1>        
+        </div>
+        <div data-role="content">
+            <div class="jqm-block-content" align="center">
+                   <p>listado de Videos</p>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+           <div data-role="navbar">
+            <ul>
+                <li><a href="#" data-role="button" data-icon="arrow-l" data-rel="back">Atras</a></li>
+                <li><a href="#info" data-role="button" data-icon="info">Info</a></li>
+            </ul>
+           </div>
+        </div>
+    </div>
+     <!-- /Mis Videos -->
+          <!-- Mis Audios -->
+    <div data-role="page" id="misaud"  class="jqm-demos jqm-home">
+        <div data-role="header"  class="jqm-header" >
+        <h1>Mis Canciones</h1>        
+        </div>
+        <div data-role="content">
+            <div class="jqm-block-content" align="center">
+                   <p>listado de audios</p>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+           <div data-role="navbar">
+            <ul>
+                <li><a href="#" data-role="button" data-icon="arrow-l" data-rel="back">Atras</a></li>
+                <li><a href="#info" data-role="button" data-icon="info">Info</a></li>
+            </ul>
+           </div>
+        </div>
+    </div>
+     <!-- /Mis Audios -->
+         
+    <!-- Perfil de amigos -->
+ 	<div data-role="page" id="perfilamigo"  class="jqm-demos jqm-home">
+        <div data-role="header"  class="jqm-header" >
+        <h1>Perfil Amigo</h1>        
+        </div>
+        <div data-role="content">
+        	<div class="jqm-block-content" align="center">
+        				<h3> <img src="img/logo.png" class="imagen3">
+                        <br> Elberth Agreda</h3>
+                        <p><strong>Correo: </strong>elberth1995@hotmail.com</p>
+                        <p><strong>Celular: </strong>3206394337</p>
+                        <p><strong>Ciudad: </strong>Cali</p>
+             			<a href="tel:3206394337" data-icon="phone" data-role="button" data-theme="b">Llamar</a>
+                        <a href="mailto:elberth1995@hotmail.com" data-icon="mail" data-role="button">Contactar</a>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+           <div data-role="navbar">
+            <ul>
+            	<li><a href="#" data-role="button" data-icon="arrow-l" data-rel="back">Atras</a></li>
+           		<li><a href="#info" data-role="button" data-icon="info">Info</a></li>
+            </ul>
+           </div>
+        </div>
+    </div>
+     <!-- /Perfil de amigos -->
+      <!-- Ayuda -->
+    <div data-role="page" id="ayuda"  class="jqm-demos jqm-home">
+        <div data-role="header"  class="jqm-header" >
+        <h1>Ayuda</h1>        
+        </div>
+        <div data-role="content">
+            <div class="jqm-block-content" align="center">
+                <h3>Preguntas Frecuentes</h3>
+                      <div data-role="collapsible" data-content-theme="false">
+                        <h4>Que es compartelo?</h4>
+                        <p>Es una red social...</p>
+                      </div>
+                      <div data-role="collapsible" data-content-theme="false">
+                        <h4>Como publicar contenido</h4>
+                        <p>....osdfsd</p>
+                      </div>
+                       
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+           <div data-role="navbar">
+            <ul>
+                <li><a href="#" data-role="button" data-icon="arrow-l" data-rel="back">Atras</a></li>
+                <li><a href="#info" data-role="button" data-icon="info">Info</a></li>
+            </ul>
+           </div>
+        </div>
+    </div>
+     <!-- /Ayuda-->
+        <!-- Trabaja con nosotros-->
+    <div data-role="page" id="trabaja"  class="jqm-demos jqm-home">
+        <div data-role="header"  class="jqm-header" >
+        <h1>Trabajo</h1>        
+        </div>
+        <div data-role="content">
+            <div class="jqm-block-content" align="center">
+                <h3>Eres programador, diseñador?</h3>
+                <p>Tal vez esto te interese</p>
+                      <div data-role="collapsible" data-content-theme="false">
+                        <h4>Diseñador</h4>
+                        <p>En compartelo estamos buscando gente como tu....</p>
+                      </div>
+                      <div data-role="collapsible" data-content-theme="false">
+                        <h4>Programador</h4>
+                        <p>En compartelo estamos buscando gente como tu....</p>
+                      </div><br><hr>
+                       <a href="tel:3206394337" data-icon="phone" data-role="button" data-theme="b">Llamanos</a>
+                       <a href="mailto:elberth1995@hotmail.com" data-icon="mail" data-role="button">Envianos tus datos</a>
+                       
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+           <div data-role="navbar">
+            <ul>
+                <li><a href="#" data-role="button" data-icon="arrow-l" data-rel="back">Atras</a></li>
+                <li><a href="#info" data-role="button" data-icon="info">Info</a></li>
+            </ul>
+           </div>
+        </div>
+    </div>
+     <!-- /Trabaja con nosotros-->
+     <!-- Configuracion Cambiar contraseña-->
+    <div data-role="page" id="cambiarpass"  class="jqm-demos jqm-home">
+        <div data-role="header"  class="jqm-header" >
+        <h1>Configurar</h1>        
+        </div>
+        <div data-role="content">
+            <div class="jqm-block-content" align="center">
+                  <form action="#" method="post" data-ajax="false"> 
+                     <label for="text-basic">Contraseña Vieja:</label>
+                     <input type="password" id="passv" value="">
+                     <label for="text-basic">Contraseña Nueva:</label>
+                    <input type="password"  id="passn"/>
+                     <label for="text-basic">Confirmar </label>
+                    <input type="password"  id="passnn"/>
+                    <input type="submit" value="Confirmar"  data-icon="check" data-theme="b"/>
+                     </form>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+           <div data-role="navbar">
+            <ul>
+                <li><a href="#" data-role="button" data-icon="arrow-l" data-rel="back">Atras</a></li>
+                <li><a href="#info" data-role="button" data-icon="info">Info</a></li>
+            </ul>
+           </div>
+        </div>
+    </div>
+     <!-- /Configuracion Cambiar contraseña-->
+      <!-- Configuracion Cambiar Usuario-->
+    <div data-role="page" id="cambiaruser"  class="jqm-demos jqm-home">
+        <div data-role="header"  class="jqm-header" >
+        <h1>Configurar</h1>        
+        </div>
+        <div data-role="content">
+            <div class="jqm-block-content" align="center">
+                  <form action="#" method="post" data-ajax="false"> 
+                     <label for="text-basic">Usuario Nuevo:</label>
+                     <input type="text" id="userv" value="">
+                     <label for="text-basic">Contraseña:</label>
+                    <input type="text" id="usern" value="">
+                     <input type="submit" value="Confirmar"  data-icon="check" data-theme="b"/>
+                     </form>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+           <div data-role="navbar">
+            <ul>
+                <li><a href="#" data-role="button" data-icon="arrow-l" data-rel="back">Atras</a></li>
+                <li><a href="#info" data-role="button" data-icon="info">Info</a></li>
+            </ul>
+           </div>
+        </div>
+    </div>
+     <!-- /Configuracion Cambiar Usuario-->
+      <!--Informacion compartelo-->
+    <div data-role="page" id="info"  class="jqm-demos jqm-home">
+        <div data-role="header"  class="jqm-header" >
+        <h1>Informacion</h1>        
+        </div>
+        <div data-role="content">
+            <div class="jqm-block-content" align="center">
+                 <h3> <img src="img/logoH.png" ></h3>
+                 <h3>Correo Electronico:</h3>
+                  <a href="mailto:elberth1995@hotmail.com" data-icon="mail" data-theme="b" data-role="button">siontco@gmail.com </a>
+                  <h3>Pagina Web:</h3>
+                  <a href="www.siont.com.co" data-icon="cloud" data-theme="b" data-role="button">siont.com.co</a>
+
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+           <div data-role="navbar">
+            <ul>
+                <li><a href="#" data-role="button" data-icon="arrow-l" data-rel="back">Atras</a></li>
+                
+            </ul>
+           </div>
+        </div>
+    </div>
+     <!-- /Informacion compartelo->
+   
+    <!-- Menu Principal -->
+    
+    <div data-role="page" id="inicio" class="jqm-demos jqm-home">
+          	<!-- header -->
+	<div data-role="header" class="jqm-header" data-position="fixed">
+		<br>
+		<a href="#" class="jqm-navmenu-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-bars ui-nodisc-icon ui-alt-icon ui-btn-left">Menu</a>
+		<a href="#" class="jqm-search-link ui-btn ui-btn-icon-notext ui-corner-all ui-icon-search ui-nodisc-icon ui-alt-icon ui-btn-right">Buscar</a><br>
+           
+	</div><!-- /header -->  
+    <!-- Opciones de Cabecera -->
+        <div data-role="content" align="center">
+            <div data-role="controlgroup" data-type="horizontal" data-mini="true">
+                <a href="#" class="ui-btn ui-corner-all ui-icon-eye ui-btn-icon-left">Artes Plasticas</a>
+                <a href="#" class="ui-btn ui-corner-all ui-icon-video ui-btn-icon-left">Videos</a>
+                <a href="#" class="ui-btn ui-corner-all ui-icon-audio ui-btn-icon-right">Musica</a>
+            </div>   
+        </div>
+       <!-- /Opciones de Cabecera -->
+
+       <!-- panel menu -->
+	    <div data-role="panel" class="jqm-navmenu-panel" data-position="left" data-display="overlay" >
+	    	<ul class="jqm-list ui-alt-icon ui-nodisc-icon">
+<li data-icon="home" data-theme="a"><a href="#inicio">Inicio</a></li>
+<li data-icon="user"><a href="#miperfil" data-ajax="false">Mi Perfil</a></li>
+<li data-icon="plus"><a href="#contactos" data-ajax="false">Amigos</a></li>
+<li data-icon="eye"><a href="#misimg" data-ajax="false">Mis Imagenes</a></li>
+<li data-icon="video"><a href="#misvid" data-ajax="false">Mis Videos</a></li>
+<li data-icon="audio"><a href="#misaud" data-ajax="false">Mi Musica</a></li>
+<li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+    <h3>Lo Mas Vistos</h3>
+    <ul>
+        <li><a href="#cambiaruser" data-ajax="false">Musica</a></li>
+        <li><a href="#cambiarpass" data-ajax="false">Videos</a></li>
+        <li><a href="#cambiarimg" data-ajax="false">Imagenes</a></li>
+    </ul>
+</li>
+<li data-icon="check"><a href="#ayuda" data-ajax="false">Ayuda</a></li>
+<li data-icon="comment"><a href="#trabaja" data-ajax="false">Trabaja con nosostros</a></li>
+<li data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-iconpos="right" data-inset="false">
+	<h3>Configuracion</h3>
+	<ul>
+		<li><a href="#cambiaruser" data-ajax="false">Nombre</a></li>
+		<li><a href="#cambiarpass" data-ajax="false">Contraseña</a></li>
+		<li><a href="#miperfil" data-ajax="false">Imagen</a></li>
+	</ul>
+</li>
+<li data-icon="power"><a href=".././">Salir</a></li>
+		     </ul>
+		</div><!-- /panel menu -->
+        
+		<!-- /panel de busqueda -->
+         <div data-role="panel" class="jqm-search-panel" data-position="right" data-display="overlay">
+		<div class="jqm-search">
+			<ul class="jqm-list" data-filter-placeholder="Ingresar @Usuario" data-filter-reveal="true">
+				<li data-icon="home"><a href=".././">Home</a></li>
+			</ul>
+		</div>
+	</div><!-- /panel busqueda -->
+        
+        <div data-role="content">	
+                 <div class="ui-grid-a ui-responsive">
+        		<!--Contenido Para imaganen -->
+                    <div class="jqm-block-content">
+                        <a href="#perfilamigo"><h3> <img src="img/perfil.jpg" class="imagen"> Elberth Agreda</h3></a>
+                        <p>En casa</p>
+                       <center>
+                        <a href="#imagenamplia" data-rel="popup" data-position-to="window" data-transition="fade"><img class="imagen2" src="img/img.jpg" ></a>
+                         <div data-role="controlgroup" data-type="horizontal" data-mini="true">
+                         	<p>12 Me gusta</p>
+                            <a href="#" data-role="button" data-icon="check" >Me gusta</a>
+                            <a href="#Compartir" data-role="button" data-rel="popup" data-position-to="window" data-icon="heart">Compartir</a>
+                        </div>
+                        </center>
+                    </div>
+                    <div data-role="popup" id="imagenamplia" data-overlay-theme="b" data-theme="b" data-corners="false">
+                        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right"></a><img class="popphoto" src="img/img.jpg" style="width:100%" >
+                    </div>
+                <!-- /Contenido Para imaganen-->
+                   <!-- Contenido Para Video-->
+                    
+                  
+                    <div class="jqm-block-content">
+                    <a href="#perfilamigo"><h3> <img src="img/perfil.jpg" class="imagen"> Elberth Agreda</h3></a>
+                    <p>Comentario acerca del Video</p>
+                    <center>
+                    <video id="video" autobuffer height="240" width="360">
+                    <source src="BigBuck.m4v">
+                    <source src="BigBuck.webm" type="video/webm">
+                    <source src="BigBuck.theora.ogv" type="video/ogg">
+                    </video>
+
+                     <div data-role="controlgroup" data-type="horizontal" data-mini="true">
+                          <p>12 Me gusta</p>
+                            <a href="#" data-role="button" data-icon="check" >Me gusta</a>
+                            <a href="#Compartir" data-role="button" data-rel="popup" data-position-to="window" data-icon="heart">Compartir</a>
+                        </div>
+                   </center>     
+                  </div>
+                   <!-- /Contenido Para Video-->
+
+                   <!-- /Contenido Para Audio-->
+                  <div class="jqm-block-content">
+                    <a href="#perfilamigo"><h3> <img src="img/perfil.jpg" class="imagen"> Elberth Agreda</h3></a>
+                    <p>Comentario acerca del audio</p>
+                    <center>
+                   <audio controls="true">
+                  <source src="media/AwMan.mp3"/>
+                  <source src="media/AwMan.ogg"/> 
+                  </audio>
+                   <div data-role="controlgroup" data-type="horizontal" data-mini="true">
+                          <p>12 Me gusta</p>
+                            <a href="#" data-role="button" data-icon="check" >Me gusta</a>
+                            <a href="#Compartir" data-role="button" data-rel="popup" data-position-to="window" data-icon="heart">Compartir</a>
+                        </div>
+                  </center>
+                  </div>
+                   <!-- /Contenido Para Audio-->		
+        </div> 
+         </div> 
+
+                      <!-- Opcion Publicar -->
+         <div data-role="popup" id="Compartir" data-theme="a" class="ui-corner-all">
+            <form>
+            <div style="padding:10px 20px;">
+            <h3>Opciones:</h3>
+            <a href=""  data-role="button" data-theme="b">Facebook</a>
+            <a href="" data-role="button" data-theme="b">Twitter</a>
+             <a href="" data-role="button" data-theme="b">Google+</a>
+            </div>
+            </form>
+        </div>
+        <!--/Opcion Publicar-->   
+        <div data-role="footer" data-position="fixed" data-theme="b">
+           <div data-role="navbar">
+		<ul>
+           <li><a href="#" data-role="button"  data-icon="refresh">Actualizar</a></li>
+           <li>
+           <a href="#opcP" data-role="button" data-rel="popup"  data-position-to="window" data-icon="arrow-u">Publicar</a>
+           </li>
+           <li><a href="#miperfil" data-role="button" data-icon="user">Perfil</a></li>
+
+        </ul>
+       		</div>
+    	</div>
+           <!-- Opcion Publicar -->
+         <div data-role="popup" id="opcP" data-theme="a" class="ui-corner-all">
+            <form>
+            <div style="padding:10px 20px;">
+            <h3>Opciones:</h3>
+            <a href="" data-icon="camera" data-role="button" data-theme="b">Imagen</a>
+            <a href="" data-icon="audio" data-role="button" data-theme="b">Audio</a>
+             <a href="" data-icon="video" data-role="button" data-theme="b">Video</a>
+            </div>
+            </form>
+        </div>
+        <!--/Opcion Publicar--> 
+</div>
+ 	
+    
+    
+
+</body>
+</html>
